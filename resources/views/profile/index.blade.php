@@ -114,16 +114,19 @@
                         <a class="nav-link" href="#">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Mitra Profiles</a>
+                        <a class="nav-link" href="{{ route('profile.index') }}">Mitra Profiles</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Settings</a>
+                        <a class="nav-link" href="#">Admin accounts</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Reports</a>
+                        <a class="nav-link" href="#">Products</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Contact</a>
+                        <a class="nav-link" href="#">Transactions</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('reports.index') }}">Mitra Reports</a>
                     </li>
                 </ul>
             </div>
