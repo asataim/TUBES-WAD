@@ -123,7 +123,7 @@
                         <a class="nav-link" href="#">Reports</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Contact</a>
+                        <a class="nav-link" href="{{ route('transaksi.index') }}">Transactions</a>
                     </li>
                 </ul>
             </div>
