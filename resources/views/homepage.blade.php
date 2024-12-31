@@ -9,7 +9,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
 
-    <link href="style_Home.css" rel="stylesheet">
+    <link href="storage/app/public/css/style_Home.css" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="{{ asset('css/style_Home.css') }}"> -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=ADLaM+Display&display=swap" rel="stylesheet">
@@ -50,7 +51,7 @@
                             <a class="nav-link" href="{{ route('reports.index') }}">Mitra Reports</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Hubungi Kami</a>
+                            <a class="nav-link" href="{{ route('about') }}">About</a>
                         </li>
                     </ul>
                 </div>

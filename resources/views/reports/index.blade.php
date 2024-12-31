@@ -165,7 +165,7 @@
                             <a class="nav-link active" href="{{ route('reports.index') }}">Mitra Reports</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Hubungi Kami</a>
+                            <a class="nav-link" href="{{ route('about') }}">About</a>
                         </li>
                     </ul>
                 </div>
