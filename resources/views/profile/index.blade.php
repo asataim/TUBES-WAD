@@ -14,19 +14,40 @@
         }
 
         .navbar {
-            background-color: #4CAF50; 
+            padding: 10px;
+            background-color:#F5F5F5 ;
+            position: sticky;
+            top: 0;
+            overflow: hidden;
+            z-index: 2;
         }
 
         .navbar-brand {
-            color: white;
+            margin-left: 50px;
         }
 
-        .navbar-nav .nav-link {
-            color: white;
+        .navbar-nav {
+            margin-right: 50px;
         }
 
-        .navbar-nav .nav-link:hover {
-            color: #f1f1f1; 
+        .navbar-collapse {
+            /* height: 15px; */
+            /* background-color: antiquewhite; */
+        }
+
+        .nav-link:hover {
+            /* font-weight: bolder; */
+            color: black;
+            /* font-size: 17px; */
+        }
+
+        .nav-link:active {
+            color: black;
+        }
+
+        .nav-link {
+            color: grey;
+            font-weight: bolder;
         }
 
         .container {
@@ -102,7 +123,7 @@
         <nav class="navbar navbar-expand-lg">
             <div class="container-fluid">
                 <a class="navbar-brand" href="#">
-                    <img src="foto/thalita navbar.jpeg" alt="Thalita Logo" style="height: 40px;">
+                    <img src="{{ asset('gambar/thalita_navbar.jpeg') }}" alt="Thalita Logo" style="height: 40px;">
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">

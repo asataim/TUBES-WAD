@@ -7,16 +7,16 @@
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <link href="style_Profile.css" rel="stylesheet">
+    <link href="{{ asset('css/style_About.css') }}" rel="stylesheet">
 
 
 </head>
 <body>
-<header>
+    <header>
         <nav class="navbar navbar-expand-lg">
             <div class="container-fluid">
                 <a class="navbar-brand" href="#">
-                    <img src="foto/thalita navbar.jpeg" alt="Thalita Logo" style="height: 40px;">
+                    <img src="{{ asset('gambar/thalita_navbar.jpeg') }}" alt="Thalita Logo" style="height: 40px;">
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -25,7 +25,7 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item">
-                            <a class="nav-link active" href="{{ url('/') }}">Home</a>
+                            <a class="nav-link" href="{{ url('/') }}">Home</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('profile.index') }}">Mitra Profiles</a>
@@ -43,7 +43,7 @@
                             <a class="nav-link" href="{{ route('reports.index') }}">Mitra Reports</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('about') }}">About</a>
+                            <a class="nav-link active" href="{{ route('about') }}">About</a>
                         </li>
                     </ul>
                 </div>

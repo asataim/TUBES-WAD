@@ -9,14 +9,14 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
 
-    <link href="storage/app/public/css/style_Home.css" rel="stylesheet">
-    <!-- <link rel="stylesheet" href="{{ asset('css/style_Home.css') }}"> -->
+    <link href="{{ asset('css/style_Home.css') }}" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=ADLaM+Display&display=swap" rel="stylesheet">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
 </head>
 
 <body>
@@ -24,7 +24,7 @@
         <nav class="navbar navbar-expand-lg">
             <div class="container-fluid">
                 <a class="navbar-brand" href="#">
-                    <img src="foto/thalita navbar.jpeg" alt="Thalita Logo" style="height: 40px;">
+                    <img src="{{ asset('gambar/thalita_navbar.jpeg') }}" alt="Thalita Logo" style="height: 40px;">
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -62,7 +62,7 @@
     <div class="hero-section">
         <div class="hero-overlay">
             <div class="logo-section">
-                <img src="foto/thalita logo.png" width="400" height="400">
+                <img src="{{ asset('gambar/thalita_logo.png') }}" width="400" height="400">
             </div>
             <div class="title-section">
                 <h1 class="title-home">Ciptakan Pengalaman Lezat di Setiap Outlet</h1>
@@ -73,16 +73,16 @@
     <div class="promo-section container-fluid">
         <div class="row">
             <div class="col-sm promo-item">
-                <img src="foto/promo1.jpeg" alt="">
+                <img src="{{ asset('gambar/promo1.jpeg') }}" alt="">
             </div>
             <div class="col-sm promo-item">
-                <img src="foto/promo2.jpeg" alt="">
+                <img src="{{ asset('gambar/promo2.jpeg') }}" alt="">
             </div>
             <div class="col-sm promo-item">
-                <img src="foto/promo3.jpeg" alt="">
+                <img src="{{ asset('gambar/promo3.jpeg') }}" alt="">
             </div>
             <div class="col-sm promo-item">
-                <img src="foto/promo4.jpeg" alt="">
+                <img src="{{ asset('gambar/promo4.jpeg') }}" alt="">
             </div>
         </div>
     </div>
@@ -96,7 +96,7 @@
                     </div>
                     <div class="second-column">
                         <div class="second-column-img">
-                            <img src="foto/profile.jpg" alt="">
+                            <img src="{{ asset('gambar/profile.jpg') }}" alt="">
                         </div>
                         <div class="second-column-name">
                             <p>Rina</p>
@@ -112,7 +112,7 @@
                     </div>
                     <div class="second-column">
                         <div class="second-column-img">
-                            <img src="foto/profile.jpg" alt="">
+                            <img src="{{ asset('gambar/profile.jpg') }}" alt="">
                         </div>
                         <div class="second-column-name">
                             <p>Fahmi</p>
@@ -128,7 +128,7 @@
                     </div>
                     <div class="second-column">
                         <div class="second-column-img">
-                            <img src="foto/profile.jpg" alt="">
+                            <img src="{{ asset('gambar/profile.jpg') }}" alt="">
                         </div>
                         <div class="second-column-name">
                             <p>Dian</p>
@@ -147,7 +147,7 @@
                     </div>
                     <div class="second-column">
                         <div class="second-column-img">
-                            <img src="foto/profile.jpg" alt="">
+                            <img src="{{ asset('gambar/profile.jpg') }}" alt="">
                         </div>
                         <div class="second-column-name">
                             <p>Agus</p>
@@ -162,7 +162,7 @@
                     </div>
                     <div class="second-column">
                         <div class="second-column-img">
-                            <img src="foto/profile.jpg" alt="">
+                            <img src="{{ asset('gambar/profile.jpg') }}" alt="">
                         </div>
                         <div class="second-column-name">
                             <p>Eko</p>
@@ -177,7 +177,7 @@
                     </div>
                     <div class="second-column">
                         <div class="second-column-img">
-                            <img src="foto/profile.jpg" alt="">
+                            <img src="{{ asset('gambar/profile.jpg') }}" alt="">
                         </div>
                         <div class="second-column-name">
                             <p>Maya</p>
