@@ -5,20 +5,22 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Report;
 use App\Models\Profile;
+use Barryvdh\DomPDF\Facade as PDF;
+
 
 class ReportController extends Controller
 {
     // Menampilkan daftar laporan
     public function index()
     {
-        $reports = Report::all(); // Mengambil semua data laporan
+        $reports = Report::all(); 
         return view('reports.index', compact('reports'));
     }
 
     // Menampilkan form untuk membuat laporan baru
     public function create()
     {
-        $profiles = Profile::all(); // Mengambil semua data profil untuk dropdown
+        $profiles = Profile::all(); 
         return view('reports.create', compact('profiles'));
     }
 
@@ -27,7 +29,7 @@ class ReportController extends Controller
     {
         // Validasi input
         $request->validate([
-            'id_mitra' => 'required|exists:profiles,id', // Pastikan id_mitra ada di tabel profiles
+            'id_mitra' => 'required|exists:profiles,id', 
             'periode' => 'required|string',
             'total_transaksi' => 'required|integer',
             'total_pendapatan' => 'required|numeric',
@@ -47,17 +49,17 @@ class ReportController extends Controller
         return view('reports.show', compact('report'));
     }
 
-    // Menampilkan form untuk mengedit laporan
+    
     public function edit(Report $report)
     {
-        $profiles = Profile::all(); // Mengambil data profil untuk dropdown
+        $profiles = Profile::all(); 
         return view('reports.edit', compact('report', 'profiles'));
     }
 
-    // Memperbarui data laporan
+    
     public function update(Request $request, Report $report)
     {
-        // Validasi input
+        
         $request->validate([
             'id_mitra' => 'required|exists:profiles,id',
             'periode' => 'required|string',
@@ -66,20 +68,20 @@ class ReportController extends Controller
             'status_kinerja' => 'required|string',
         ]);
 
-        // Memperbarui laporan
+        
         $report->update($request->all());
 
-        // Redirect ke halaman daftar laporan
+        
         return redirect()->route('reports.index');
     }
 
-    // Menghapus laporan
+    
     public function destroy(Report $report)
     {
-        // Menghapus laporan
+        
         $report->delete();
 
-        // Redirect ke halaman daftar laporan
+        
         return redirect()->route('reports.index');
     }
 }

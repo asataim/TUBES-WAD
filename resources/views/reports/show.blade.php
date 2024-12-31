@@ -5,17 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Detail Laporan</title>
     <style>
-        /* Palet warna hijau dan putih */
         body {
-            background-color: #f4f8f4; /* Warna latar belakang putih muda */
-            color: #333; /* Teks berwarna abu-abu gelap */
+            background-color: #f4f8f4; 
+            color: #333; 
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
         }
 
         h1 {
-            background-color: #4CAF50; /* Warna hijau gelap untuk header */
+            background-color: #4CAF50; 
             color: white;
             padding: 20px;
             text-align: center;
@@ -28,7 +27,7 @@
             background-color: white;
             padding: 30px;
             border-radius: 8px;
-            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Efek bayangan untuk elemen */
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); 
         }
 
         .detail-item {
@@ -37,12 +36,12 @@
         }
 
         .detail-item strong {
-            color: #4CAF50; /* Hijau untuk label */
+            color: #4CAF50; 
         }
 
         a {
             display: inline-block;
-            background-color: #4CAF50; /* Hijau untuk link kembali */
+            background-color: #4CAF50; 
             color: white;
             padding: 10px 20px;
             text-decoration: none;
@@ -51,7 +50,7 @@
         }
 
         a:hover {
-            background-color: #45a049; /* Efek hover hijau lebih gelap */
+            background-color: #45a049; 
         }
 
     </style>

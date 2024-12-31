@@ -5,17 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tambah Laporan</title>
     <style>
-        /* Palet warna hijau dan putih */
+        
         body {
-            background-color: #f4f8f4; /* Latar belakang putih muda */
-            color: #333; /* Teks berwarna abu-abu gelap */
+            background-color: #f4f8f4; 
+            color: #333; 
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
         }
 
         h1 {
-            background-color: #4CAF50; /* Warna hijau gelap untuk header */
+            background-color: #4CAF50; 
             color: white;
             padding: 20px;
             text-align: center;
@@ -28,7 +28,7 @@
             background-color: white;
             padding: 30px;
             border-radius: 8px;
-            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Efek bayangan */
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); 
         }
 
         form {
@@ -39,7 +39,7 @@
         label {
             font-size: 16px;
             margin-bottom: 5px;
-            color: #4CAF50; /* Warna hijau untuk label */
+            color: #4CAF50; 
         }
 
         input, select, button {
@@ -52,15 +52,15 @@
         }
 
         input[type="number"], input[type="text"] {
-            background-color: #f9f9f9; /* Warna latar belakang input */
+            background-color: #f9f9f9; 
         }
 
         select {
-            background-color: #f9f9f9; /* Warna latar belakang select */
+            background-color: #f9f9f9; 
         }
 
         button {
-            background-color: #4CAF50; /* Hijau untuk tombol */
+            background-color: #4CAF50; 
             color: white;
             border: none;
             cursor: pointer;
@@ -69,16 +69,16 @@
         }
 
         button:hover {
-            background-color: #45a049; /* Efek hover tombol */
+            background-color: #45a049; 
         }
 
-        /* Efek hover pada input */
+        
         input:focus, select:focus {
             border-color: #4CAF50;
             outline: none;
         }
 
-        /* Styling untuk link kembali */
+        
         .back-link {
             display: inline-block;
             background-color: #f44336;

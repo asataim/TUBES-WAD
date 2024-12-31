@@ -14,7 +14,7 @@
         }
 
         .navbar {
-            background-color: #4CAF50; /* Green Navbar */
+            background-color: #4CAF50; 
         }
 
         .navbar-brand {
@@ -26,7 +26,7 @@
         }
 
         .navbar-nav .nav-link:hover {
-            color: #f1f1f1; /* Slight off-white color on hover */
+            color: #f1f1f1; 
         }
 
         .container {
@@ -38,7 +38,7 @@
         }
 
         h1 {
-            color: #4CAF50; /* Green title color */
+            color: #4CAF50; 
             font-size: 2.5rem;
         }
 
@@ -48,7 +48,7 @@
         }
 
         .table-striped tbody tr:nth-of-type(odd) {
-            background-color: #f9f9f9; /* Light gray background for odd rows */
+            background-color: #f9f9f9; 
         }
 
         .btn {
@@ -60,12 +60,12 @@
         }
 
         .btn-primary {
-            background-color: #4CAF50; /* Green button */
+            background-color: #4CAF50; 
             border: none;
         }
 
         .btn-primary:hover {
-            background-color: #45a049; /* Slightly darker green on hover */
+            background-color: #45a049; 
         }
 
         .btn-info, .btn-warning, .btn-danger {
@@ -93,45 +93,49 @@
         }
 
         .text-end a:hover {
-            color: #f1f1f1; /* Hover effect for the 'Add New Profile' link */
+            color: #f1f1f1; 
         }
     </style>
 </head>
 <body>
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">
-                <img src="{{ asset('gambar/testlogo.png') }}" alt="Logo"> <!-- Replace with your logo -->
-                Mitra Profiles
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('profile.index') }}">Mitra Profiles</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Admin accounts</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Products</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Transactions</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('reports.index') }}">Mitra Reports</a>
-                    </li>
-                </ul>
+    <header>
+        <nav class="navbar navbar-expand-lg">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">
+                    <img src="foto/thalita navbar.jpeg" alt="Thalita Logo" style="height: 40px;">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url('/') }}">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="{{ route('profile.index') }}">Mitra Profiles</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Kemitraan</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Testimoni</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Resto</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('reports.index') }}">Mitra Reports</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Hubungi Kami</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
-        </div>
-    </nav>
+        </nav>
+    </header>
 
     <div class="container mt-5">
         <h1 class="text-center mb-4">Profile List</h1>
