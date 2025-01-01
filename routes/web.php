@@ -7,10 +7,21 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ReportController;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\PartnerController;
+use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\Auth\RegisterController;
 
-Route::get('/', [MainController::class, 'index'])->name('main');
-Route::get('/homepage', [HomeController::class, 'index'])->name('homepage');
-Route::resource('profile', ProfileController::class);
-Route::resource('reports', ReportController::class);
-Route::get('/about', [AboutController::class, 'index'])->name('about');
-Route::resource('partners', PartnerController::class);
+
+
+Route::middleware('auth')->get('/main', [MainController::class, 'index'])->name('main');
+Route::middleware('auth')->get('/homepage', [HomeController::class, 'index'])->name('homepage');
+Route::middleware('auth')->resource('profile', ProfileController::class);
+Route::middleware('auth')->resource('reports', ReportController::class);
+Route::middleware('auth')->get('/about', [AboutController::class, 'index'])->name('about');
+Route::middleware('auth')->resource('partners', PartnerController::class);
+
+Route::get('/', [LoginController::class, 'showLoginForm'])->name('login');
+Route::post('/login', [LoginController::class, 'login']);
+Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
+
+Route::get('/register', [RegisterController::class, 'showRegistrationForm'])->name('register');
+Route::post('/register', [RegisterController::class, 'register']);

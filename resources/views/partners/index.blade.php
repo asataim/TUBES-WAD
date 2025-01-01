@@ -151,7 +151,7 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item">
-                            <a class="nav-link active" href="{{ url('/') }}">Home</a>
+                            <a class="nav-link active" href="{{ route('/main') }}">Home</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('about') }}">Profil</a>
@@ -182,10 +182,10 @@
 
 <div class="container">
     <div class="header">
-        Daftar Kemitraan
+        Profile Mitra
     </div>
 
-    <a href="{{ route('partners.create') }}" class="btn">Tambah Mitra</a>
+    <a href="{{ route('partners.create') }}" class="btn">Tambah Profile</a>
 
     <table class="table">
         <thead>
