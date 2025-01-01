@@ -39,7 +39,7 @@
                             <a class="nav-link" href="{{ route('profile.index') }}">Mitra Profiles</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Kemitraan</a>
+                            <a class="nav-link" href="{{ route('admin.index') }}">Accounts</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">Testimoni</a>
