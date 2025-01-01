@@ -30,5 +30,5 @@ Route::get('/register', [RegisterController::class, 'showRegistrationForm'])->na
 Route::post('/register', [RegisterController::class, 'register']);
 
 Route::resource('transaksi', TransaksiController::class);
-Route::get('/', [TransaksiController::class, 'index']);
-Route::get('/', [TransaksiController::class, 'index'])->name('transaksi.index');
+Route::get('/transaksi', [TransaksiController::class, 'index']);
+Route::get('/transaksi', [TransaksiController::class, 'index'])->name('transaksi.index');
