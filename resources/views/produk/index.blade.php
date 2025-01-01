@@ -34,7 +34,7 @@
                             <a class="nav-link active" href="{{ route('produk.index') }}">Produk</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">FITUR</a>
+                            <a class="nav-link" href="{{ route('transaksi.index') }}">Transactions</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('reports.index') }}">Mitra Reports</a>

@@ -180,7 +180,7 @@
                             <a class="nav-link" href="{{ route('produk.index') }}">Produk</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Resto</a>
+                            <a class="nav-link" href="{{ route('transaksi.index') }}">Transactions</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link active" href="{{ route('reports.index') }}">Mitra Reports</a>

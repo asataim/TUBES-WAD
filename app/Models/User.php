@@ -11,7 +11,6 @@ class User extends Authenticatable
         'nama', 'username', 'password', 'role',
     ];
 
-    // Metode untuk memeriksa apakah pengguna adalah admin
     public function isAdmin()
     {
         return $this->role === 'admin';

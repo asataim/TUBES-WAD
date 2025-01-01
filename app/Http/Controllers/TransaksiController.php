@@ -3,17 +3,23 @@
 namespace App\Http\Controllers;
 
 use App\Models\Transaksi;
-
+use App\Models\Profile;
 use Illuminate\Http\Request;
 
 class TransaksiController extends Controller
 {
     public function index()
     {
-        $transaksi = Transaksi::with('profile')->latest()->get();
+        $transaksi = Transaksi::with('profiles')->latest()->get();
         $profiles = Profile::all();
         return view('transaksi.index', compact('transaksi', 'profiles'));
     }
+
+    public function create()
+    {
+    $profiles = Profile::all(); 
+    return view('transaksi.create', compact('profiles'));
+    }  
 
     public function store(Request $request)
     {

@@ -9,10 +9,8 @@ class Report extends Model
 {
     use HasFactory;
 
-    // Nama tabel yang akan digunakan, jika berbeda dari nama model (contoh: 'reports')
     protected $table = 'report';
 
-    // Kolom yang dapat diisi secara massal (mass assignment)
     protected $fillable = [
         'id_mitra',
         'periode',
@@ -21,7 +19,6 @@ class Report extends Model
         'status_kinerja'
     ];
 
-    // Relasi: Setiap laporan berhubungan dengan satu profil
     public function profile()
     {
         return $this->belongsTo(Profile::class, 'id_mitra');

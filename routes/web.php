@@ -29,6 +29,11 @@ Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 Route::get('/register', [RegisterController::class, 'showRegistrationForm'])->name('register');
 Route::post('/register', [RegisterController::class, 'register']);
 
-Route::resource('transaksi', TransaksiController::class);
-Route::get('/transaksi', [TransaksiController::class, 'index']);
-Route::get('/transaksi', [TransaksiController::class, 'index'])->name('transaksi.index');
+Route::middleware('auth')->resource('transaksi', TransaksiController::class);
+Route::middleware('auth')->get('/transaksi', [TransaksiController::class, 'index']);
+Route::middleware('auth')->get('/transaksi', [TransaksiController::class, 'index'])->name('transaksi.index');
+
+Route::middleware('auth')->resource('admin', AdminController::class);
+Route::middleware('auth')->get('/admin', [AdminController::class, 'index'])->name('admin.index');
+
+Route::middleware('auth')->resource('produk', ProdukController::class);

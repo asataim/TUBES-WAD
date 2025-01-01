@@ -55,9 +55,9 @@
 
                     <div class="mb-3">
                         <label class="form-label">Role</label>
-                        <select name="admin/user" class="form-control" required>
+                        <select name="role" class="form-control" required>
                             @foreach($userTypes as $type)
-                                <option value="{{ $type }}" {{ old('admin/user', $admin['admin/user']) == $type ? 'selected' : '' }}>
+                                <option value="{{ $type }}" {{ old('role', $admin['role']) == $type ? 'selected' : '' }}>
                                     {{ ucfirst($type) }}
                                 </option>
                             @endforeach

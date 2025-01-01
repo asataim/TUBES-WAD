@@ -45,7 +45,7 @@
                             <a class="nav-link" href="{{ route('produk.index') }}">Produk</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Resto</a>
+                            <a class="nav-link" href="{{ route('transaksi.index') }}">Transactions</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('reports.index') }}">Mitra Reports</a>
@@ -368,7 +368,7 @@
                         <p><i class="fas fa-home me-3"></i> Bandung, Bojongsoang, Indonesia</p>
                         <p>
                             <i class="fas fa-envelope me-3"></i>
-                            ThalitaChicken@gmail.com
+                            thalitafriedchickenpusat@gmail.com
                         </p>
                         <p><i class="fas fa-phone me-3"></i> +62 999 999</p>
                         <p><i class="fas fa-print me-3"></i> +62 888 888</p>

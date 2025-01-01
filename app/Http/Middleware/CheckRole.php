@@ -20,7 +20,6 @@ class CheckRole
     if (Auth::check()) {
         $user = Auth::user();
 
-        // Memeriksa role dan mengarahkan ke halaman sesuai
         if ($user->role === 'admin') {
             return redirect()->route('homepage');
         } else {

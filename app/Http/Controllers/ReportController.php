@@ -10,24 +10,20 @@ use Barryvdh\DomPDF\Facade as PDF;
 
 class ReportController extends Controller
 {
-    // Menampilkan daftar laporan
     public function index()
     {
         $reports = Report::all(); 
         return view('reports.index', compact('reports'));
     }
 
-    // Menampilkan form untuk membuat laporan baru
     public function create()
     {
         $profiles = Profile::all(); 
         return view('reports.create', compact('profiles'));
     }
 
-    // Menyimpan laporan baru ke database
     public function store(Request $request)
     {
-        // Validasi input
         $request->validate([
             'id_mitra' => 'required|exists:profiles,id', 
             'periode' => 'required|string',
@@ -36,14 +32,11 @@ class ReportController extends Controller
             'status_kinerja' => 'required|string',
         ]);
 
-        // Menyimpan data laporan
         Report::create($request->all());
 
-        // Redirect ke halaman daftar laporan
         return redirect()->route('reports.index');
     }
 
-    // Menampilkan detail laporan
     public function show(Report $report)
     {
         return view('reports.show', compact('report'));

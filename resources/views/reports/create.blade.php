@@ -125,7 +125,6 @@
             <button type="submit">Simpan</button>
         </form>
 
-        <!-- Link Kembali ke Daftar Laporan -->
         <a href="{{ route('reports.index') }}" class="back-link">Kembali ke Daftar Laporan</a>
     </div>
 
