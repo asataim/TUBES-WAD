@@ -1,12 +1,16 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\MainController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ReportController;
 use App\Http\Controllers\AboutController;
+use App\Http\Controllers\PartnerController;
 
-Route::get('/', [HomeController::class, 'index'])->name('homepage');
+Route::get('/', [MainController::class, 'index'])->name('main');
+Route::get('/homepage', [HomeController::class, 'index'])->name('homepage');
 Route::resource('profile', ProfileController::class);
 Route::resource('reports', ReportController::class);
 Route::get('/about', [AboutController::class, 'index'])->name('about');
+Route::resource('partners', PartnerController::class);
