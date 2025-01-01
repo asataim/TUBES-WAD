@@ -151,13 +151,13 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item">
-                            <a class="nav-link active" href="{{ route('/main') }}">Home</a>
+                            <a class="nav-link active" href="{{ route('main') }}">Home</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('about') }}">Profil</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('partners.index') }}">Kemitraan</a>
+                            <a class="nav-link active" href="{{ route('partners.index') }}">Kemitraan</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">Testimoni</a>
@@ -170,9 +170,6 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">Hubungi Kami</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Login as Admin</a>
                         </li>
                     </ul>
                 </div>

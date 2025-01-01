@@ -93,6 +93,10 @@
         <form action="{{ url('/register') }}" method="POST">
             @csrf
             <div class="form-group">
+                <label for="nama">nama</label>
+                <input type="text" id="nama" name="nama" placeholder="Enter your name" required>
+            </div>
+            <div class="form-group">
                 <label for="username">Username</label>
                 <input type="text" id="username" name="username" placeholder="Enter your username" required>
             </div>

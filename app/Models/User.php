@@ -8,7 +8,7 @@ use Illuminate\Notifications\Notifiable;
 class User extends Authenticatable
 {
     protected $fillable = [
-        'username', 'password', 'role',
+        'nama', 'username', 'password', 'role',
     ];
 
     // Metode untuk memeriksa apakah pengguna adalah admin
