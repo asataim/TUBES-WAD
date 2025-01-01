@@ -8,8 +8,42 @@
             background-color: #ffffff;
         }
         .navbar {
-            background-color: #90EE90 !important;
+            padding: 10px;
+            background-color:#F5F5F5 ;
+            position: sticky;
+            top: 0;
+            overflow: hidden;
+            z-index: 2;
         }
+
+        .navbar-brand {
+            margin-left: 50px;
+        }
+
+        .navbar-nav {
+            margin-right: 50px;
+        }
+
+        .navbar-collapse {
+            /* height: 15px; */
+            /* background-color: antiquewhite; */
+        }
+
+        .nav-link:hover {
+            /* font-weight: bolder; */
+            color: black;
+            /* font-size: 17px; */
+        }
+
+        .nav-link:active {
+            color: black;
+        }
+
+        .nav-link {
+            color: grey;
+            font-weight: bolder;
+        }
+
         .btn-primary {
             background-color: #90EE90;
             border-color: #90EE90;
@@ -34,11 +68,42 @@
     </style>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light mb-4">
-        <div class="container">
-            <a class="navbar-brand" href="#">ThalitaFC</a>
-        </div>
-    </nav>
+
+<header>
+        <nav class="navbar navbar-expand-lg">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">
+                    <img src="{{ asset('gambar/thalita_navbar.jpeg') }}" alt="Thalita Logo" style="height: 40px;">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('homepage') }}">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('profile.index') }}">Mitra Profiles</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="{{ route('admin.index') }}">Accounts</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Testimoni</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Resto</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('reports.index') }}">Mitra Reports</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
 
     <div class="container">
         @if(session('success'))
