@@ -11,6 +11,7 @@ use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ProdukController;
+use App\Http\Controllers\TransaksiController;
 
 
 
@@ -28,8 +29,6 @@ Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 Route::get('/register', [RegisterController::class, 'showRegistrationForm'])->name('register');
 Route::post('/register', [RegisterController::class, 'register']);
 
-
-Route::middleware('auth')->resource('admin', AdminController::class);
-Route::middleware('auth')->get('/admin', [AdminController::class, 'index'])->name('admin.index');
-
-Route::middleware('auth')->resource('produk', ProdukController::class);
+Route::resource('transaksi', TransaksiController::class);
+Route::get('/', [TransaksiController::class, 'index']);
+Route::get('/', [TransaksiController::class, 'index'])->name('transaksi.index');
