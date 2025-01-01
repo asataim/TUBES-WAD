@@ -8,89 +8,110 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         body {
-            background-image: url('{{ asset('gambar/background_ayam.png') }}');
-            background-size: 100px 100px;
-            background-repeat: repeat;
+            background-image: linear-gradient(to right,rgb(138, 195, 139),rgb(172, 204, 184));
+            background-size: cover;
+            background-attachment: fixed;
         }
 
         .navbar {
-            padding: 10px;
-            background-color:#F5F5F5 ;
+            padding: 20px;
+            background-color: #F5F5F5;
+            border-bottom: 2px solid #4CAF50;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
             position: sticky;
             top: 0;
-            overflow: hidden;
-            z-index: 2;
+            z-index: 10;
         }
 
-        .navbar-brand {
-            margin-left: 50px;
+        .navbar-brand img {
+            height: 50px;
+            transition: transform 0.3s ease;
         }
 
-        .navbar-nav {
-            margin-right: 50px;
+        .navbar-brand img:hover {
+            transform: scale(1.1);
         }
 
-        .navbar-collapse {
-            /* height: 15px; */
-            /* background-color: antiquewhite; */
+        .navbar-nav .nav-link {
+            color: #333;
+            font-weight: 600;
+            padding: 0 15px;
+            text-transform: uppercase;
+            transition: color 0.3s ease;
         }
 
-        .nav-link:hover {
-            /* font-weight: bolder; */
-            color: black;
-            /* font-size: 17px; */
+        .navbar-nav .nav-link:hover {
+            color: #4CAF50;
         }
 
-        .nav-link:active {
-            color: black;
-        }
-
-        .nav-link {
-            color: grey;
-            font-weight: bolder;
+        .navbar-nav .nav-link.active {
+            color: #4CAF50;
+            font-weight: bold;
         }
 
         .container {
-            background-color: #ffffff;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            margin-top: 30px;
+            background-color: rgba(255, 255, 255, 0.95);
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+            margin-top: 50px;
         }
 
         h1 {
-            color: #4CAF50; 
-            font-size: 2.5rem;
+            color: #4CAF50;
+            font-size: 2.8rem;
+            font-family: 'Poppins', sans-serif;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .table {
+            margin-top: 30px;
+            border-radius: 10px;
+            overflow: hidden;
         }
 
         .table th, .table td {
             vertical-align: middle;
+            padding: 20px;
             color: #333;
+            background-color: #ffffff;
+            border: none;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .table th {
+            background-color: #f1f8e9;
+            color: #4CAF50;
+            font-weight: bold;
+            text-transform: uppercase;
         }
 
         .table-striped tbody tr:nth-of-type(odd) {
-            background-color: #f9f9f9; 
+            background-color: #f7f7f7;
+        }
+
+        .table-striped tbody tr:hover {
+            background-color: #e8f5e9;
         }
 
         .btn {
             transition: all 0.3s ease;
-        }
-
-        .btn:hover {
-            transform: scale(1.05);
+            font-weight: 600;
+            border-radius: 50px;
         }
 
         .btn-primary {
-            background-color: #4CAF50; 
+            background-color: #4CAF50;
             border: none;
+            padding: 10px 20px;
         }
 
         .btn-primary:hover {
-            background-color: #45a049; 
-        }
-
-        .btn-info, .btn-warning, .btn-danger {
-            color: white;
+            background-color: #45a049;
         }
 
         .btn-info {
@@ -105,8 +126,17 @@
             background-color: #dc3545;
         }
 
+        .btn-sm {
+            padding: 8px 15px;
+        }
+
         .alert {
-            margin-bottom: 20px;
+            border-radius: 50px;
+            padding: 15px;
+            background-color: #e8f5e9;
+            color: #4CAF50;
+            font-weight: bold;
+            margin-bottom: 30px;
         }
 
         .text-end a {
@@ -114,7 +144,7 @@
         }
 
         .text-end a:hover {
-            color: #f1f1f1; 
+            color: #e0f7fa;
         }
     </style>
 </head>
@@ -123,7 +153,7 @@
         <nav class="navbar navbar-expand-lg">
             <div class="container-fluid">
                 <a class="navbar-brand" href="#">
-                    <img src="{{ asset('gambar/thalita_navbar.jpeg') }}" alt="Thalita Logo" style="height: 40px;">
+                    <img src="{{ asset('gambar/thalita_navbar.jpeg') }}" alt="Thalita Logo">
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -156,7 +186,7 @@
     </header>
 
     <div class="container mt-5">
-        <h1 class="text-center mb-4">Profile List</h1>
+        <h1>Profile List</h1>
 
         @if(session('success'))
             <div class="alert alert-success">
