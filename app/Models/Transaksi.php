@@ -2,11 +2,15 @@
 
 namespace App\Models;
 
+<<<<<<< Updated upstream
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+=======
+>>>>>>> Stashed changes
 use Illuminate\Database\Eloquent\Model;
 
 class Transaksi extends Model
 {
+<<<<<<< Updated upstream
     use HasFactory;
 
     /**
@@ -22,11 +26,16 @@ class Transaksi extends Model
     /**
      * The attributes that are mass assignable.
      */
+=======
+    protected $table = 'transaksi';
+    
+>>>>>>> Stashed changes
     protected $fillable = [
         'id_mitra',
         'jumlah',
         'tanggal',
         'status',
+<<<<<<< Updated upstream
         'keterangan',
     ];
 
@@ -36,5 +45,17 @@ class Transaksi extends Model
     public function mitra()
     {
         return $this->belongsTo(Mitra::class, 'id_mitra');
+=======
+        'keterangan'
+    ];
+
+    protected $casts = [
+        'tanggal' => 'date'
+    ];
+
+    public function profile()
+    {
+        return $this->belongsTo(Profile::class, 'id_mitra');
+>>>>>>> Stashed changes
     }
 }
