@@ -91,10 +91,10 @@
                             <a class="nav-link active" href="{{ route('admin.index') }}">Accounts</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Testimoni</a>
+                            <a class="nav-link" href="{{ route('produk.index') }}">Produk</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Resto</a>
+                            <a class="nav-link" href="#">FITUR</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('reports.index') }}">Mitra Reports</a>

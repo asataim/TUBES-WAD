@@ -10,6 +10,7 @@ use App\Http\Controllers\PartnerController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\ProdukController;
 
 
 
@@ -29,4 +30,6 @@ Route::post('/register', [RegisterController::class, 'register']);
 
 
 Route::middleware('auth')->resource('admin', AdminController::class);
-Route::middleware('auth')->get('/', [AdminController::class, 'index']);
+Route::middleware('auth')->get('/admin', [AdminController::class, 'index'])->name('admin.index');
+
+Route::middleware('auth')->resource('produk', ProdukController::class);

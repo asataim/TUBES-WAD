@@ -1,0 +1,47 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar {
+    padding: 10px;
+    background-color:#F5F5F5 ;
+    position: sticky;
+    top: 0;
+    overflow: hidden;
+    z-index: 2;
+}
+
+.navbar-brand {
+    margin-left: 50px;
+}
+
+.navbar-nav {
+    margin-right: 50px;
+}
+
+.navbar-collapse {
+    /* height: 15px; */
+    /* background-color: antiquewhite; */
+}
+
+.nav-link:hover {
+    /* font-weight: bolder; */
+    color: black;
+    /* font-size: 17px; */
+}
+
+.nav-link:active {
+    color: black;
+}
+
+.nav-link {
+    color: grey;
+    font-weight: bolder;
+}
+
+/* ... */
+

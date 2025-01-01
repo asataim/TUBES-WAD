@@ -159,18 +159,6 @@
                         <li class="nav-item">
                             <a class="nav-link active" href="{{ route('partners.index') }}">Kemitraan</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Testimoni</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Resto</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Menu</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Hubungi Kami</a>
-                        </li>
                     </ul>
                 </div>
             </div>
