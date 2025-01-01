@@ -3,10 +3,15 @@
 namespace App\Http\Controllers;
 
 use App\Models\Transaksi;
+<<<<<<< Updated upstream
+=======
+use App\Models\Profile;
+>>>>>>> Stashed changes
 use Illuminate\Http\Request;
 
 class TransaksiController extends Controller
 {
+<<<<<<< Updated upstream
     /**
      * Display a listing of the transactions.
      */
@@ -88,5 +93,46 @@ class TransaksiController extends Controller
         $transaksi->delete();
 
         return redirect()->route('transaksi.index')->with('success', 'Transaksi berhasil dihapus.');
+=======
+    public function index()
+    {
+        $transaksi = Transaksi::with('profile')->latest()->get();
+        $profiles = Profile::all();
+        return view('transaksi.index', compact('transaksi', 'profiles'));
+    }
+
+    public function store(Request $request)
+    {
+        $request->validate([
+            'id_mitra' => 'required|exists:profiles,id',
+            'jumlah' => 'required|numeric',
+            'tanggal' => 'required|date',
+            'status' => 'required|in:pending,completed,failed',
+            'keterangan' => 'required'
+        ]);
+
+        Transaksi::create($request->all());
+        return redirect()->route('transaksi.index')->with('success', 'Transaksi berhasil ditambahkan');
+    }
+
+    public function update(Request $request, Transaksi $transaksi)
+    {
+        $request->validate([
+            'id_mitra' => 'required|exists:profiles,id',
+            'jumlah' => 'required|numeric',
+            'tanggal' => 'required|date',
+            'status' => 'required|in:pending,completed,failed',
+            'keterangan' => 'required'
+        ]);
+
+        $transaksi->update($request->all());
+        return redirect()->route('transaksi.index')->with('success', 'Transaksi berhasil diperbarui');
+    }
+
+    public function destroy(Transaksi $transaksi)
+    {
+        $transaksi->delete();
+        return redirect()->route('transaksi.index')->with('success', 'Transaksi berhasil dihapus');
+>>>>>>> Stashed changes
     }
 }
