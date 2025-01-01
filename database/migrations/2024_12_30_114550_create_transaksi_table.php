@@ -21,7 +21,7 @@ return new class extends Migration
             $table->timestamps();
 
             // Defining foreign key constraint
-            $table->foreign('id_mitra')->references('id')->on('profile')->onDelete('cascade');
+            $table->foreign('id_mitra')->references('id')->on('profiles')->onDelete('cascade');
         });
     }
 

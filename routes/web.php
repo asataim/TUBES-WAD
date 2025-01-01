@@ -13,9 +13,6 @@ use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\TransaksiController;
 // use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Controller;
-use App\Http\Controllers\ProfileController;
-<<<<<<< Updated upstream
-use App\Http\Controllers\TransaksiController;
 
 Route::get('/', [MainController::class, 'index'])->name('main');
 Route::get('/homepage', [HomeController::class, 'index'])->name('homepage');
@@ -31,7 +28,6 @@ Route::resource('transaksi', TransaksiController::class);
 Route::get('/', [TransaksiController::class, 'index']);
 Route::get('/', [TransaksiController::class, 'index'])->name('transaksi.index');
 
-use App\Http\Controllers\ReportController;
 
 
 // Route::get('/', [MainController::class, 'index'])->name('main');
