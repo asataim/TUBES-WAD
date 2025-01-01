@@ -7,10 +7,12 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ReportController;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\PartnerController;
+use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\TransaksiController;
 
 Route::get('/', [MainController::class, 'index'])->name('main');
 Route::get('/homepage', [HomeController::class, 'index'])->name('homepage');
-use App\Http\Controllers\TransaksiController;
 
 
 Route::resource('profile', ProfileController::class);

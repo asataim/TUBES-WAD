@@ -132,7 +132,7 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ url('/') }}">Home</a>
+                            <a class="nav-link" href="{{ route('homepage') }}">Home</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link active" href="{{ route('profile.index') }}">Mitra Profiles</a>
@@ -148,9 +148,6 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('reports.index') }}">Mitra Reports</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('about') }}">About</a>
                         </li>
                     </ul>
                 </div>
