@@ -15,4 +15,10 @@ class Profile extends Model
         'contact',
         'address',
     ];
+
+
+public function reports()
+    {
+        return $this->hasMany(Report::class, 'id_mitra');
+    }
 }

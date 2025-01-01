@@ -1,0 +1,81 @@
+body {
+    background-color:#F5F5F5 ;
+    padding-bottom: 1000px;     
+}
+
+.navbar {
+    padding: 10px;
+    background-color:#F5F5F5 ;
+    position: sticky;
+    top: 0;
+    overflow: hidden;
+    z-index: 2;
+}
+
+.navbar-brand {
+    margin-left: 50px;
+}
+
+.navbar-nav {
+    margin-right: 50px;
+}
+
+.nav-link:hover {
+    /* font-weight: bolder; */
+    color: black;
+    /* font-size: 17px; */
+}
+
+.nav-link:active {
+    color: black;
+}
+
+.nav-link {
+    color: grey;
+    font-weight: bolder;
+}
+
+/* PROFIL */
+
+.profile-section {
+    position: relative;
+    background-image: url('gambar/ayam.jpeg'); 
+    background-size: cover;
+    background-position: center;
+    height: 100vh; 
+    color: white;
+    text-align: center;
+}
+
+.profile-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6); 
+}
+
+.profile-content {
+    position: relative;
+    z-index: 1;
+    padding: 50px 150px;
+    display: flex;
+    width: 100%;
+    height: 80%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.profile-content h1 {
+    font-weight: bold;
+    font-size: 70px;
+}
+
+.profile-content p {
+    margin-top: 20px;
+    font-size: 28px;
+    line-height: 1.6;
+}

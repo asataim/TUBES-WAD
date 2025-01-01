@@ -3,14 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mitra List</title>
+    <title>Daftar Laporan</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         body {
-            background-image: url('{{ asset('gambar/background_ayam.png') }}');
-            background-size: 100px 100px;
-            background-repeat: repeat;
+            background-color: #f4f8f4; 
+            color: #333; 
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
         }
 
         .navbar {
@@ -63,13 +65,69 @@
             font-size: 2.5rem;
         }
 
-        .table th, .table td {
-            vertical-align: middle;
-            color: #333;
+        a {
+            color: #4CAF50; 
+            text-decoration: none;
         }
 
-        .table-striped tbody tr:nth-of-type(odd) {
-            background-color: #f9f9f9; 
+        a:hover {
+            text-decoration: underline;
+        }
+
+        table {
+            width: 80%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            background-color: white;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); 
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        td {
+            background-color: #f9f9f9;
+        }
+
+       
+        tr:hover td {
+            background-color: #e1f5e1;
+        }
+
+        button {
+            background-color: #f44336; 
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        button:hover {
+            background-color: #e53935; 
+        }
+
+        
+        .add-report-link {
+            display: inline-block;
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 4px;
+            margin: 20px;
+        }
+
+        .add-report-link:hover {
+            background-color: #45a049;
         }
 
         .btn {
@@ -80,41 +138,19 @@
             transform: scale(1.05);
         }
 
-        .btn-primary {
-            background-color: #4CAF50; 
-            border: none;
-        }
-
-        .btn-primary:hover {
-            background-color: #45a049; 
-        }
-
-        .btn-info, .btn-warning, .btn-danger {
-            color: white;
-        }
-
         .btn-info {
             background-color: #17a2b8;
+            color: white;
         }
 
         .btn-warning {
             background-color: #ffc107;
+            color: white;
         }
 
         .btn-danger {
             background-color: #dc3545;
-        }
-
-        .alert {
-            margin-bottom: 20px;
-        }
-
-        .text-end a {
-            color: #ffffff;
-        }
-
-        .text-end a:hover {
-            color: #f1f1f1; 
+            color: white;
         }
     </style>
 </head>
@@ -135,7 +171,7 @@
                             <a class="nav-link" href="{{ url('/') }}">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" href="{{ route('profile.index') }}">Mitra Profiles</a>
+                            <a class="nav-link" href="{{ route('profile.index') }}">Mitra Profiles</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">Kemitraan</a>
@@ -147,7 +183,7 @@
                             <a class="nav-link" href="#">Resto</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('reports.index') }}">Mitra Reports</a>
+                            <a class="nav-link active" href="{{ route('reports.index') }}">Mitra Reports</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('about') }}">About</a>
@@ -159,60 +195,48 @@
     </header>
 
     <div class="container mt-5">
-        <h1 class="text-center mb-4">Profile List</h1>
-
-        @if(session('success'))
-            <div class="alert alert-success">
-                {{ session('success') }}
-            </div>
-        @endif
-
-        <div class="mb-3 text-end">
-            <a href="{{ route('profile.create') }}" class="btn btn-primary">
-                <i class="fas fa-plus-circle"></i> Add New Profile
-            </a>
-        </div>
-
-        <table class="table table-bordered table-striped">
-            <thead class="table-light">
+        <h1 class="text-center mb-4">Daftar Laporan</h1>
+        
+        <a href="{{ route('reports.create') }}" class="btn add-report-link mb-3">
+            <i class="fas fa-plus-circle"></i> Tambah Laporan Baru
+        </a>
+        
+        <table>
+            <thead>
                 <tr>
-                    <th>ID</th>
-                    <th>Name</th>
-                    <th>Description</th>
-                    <th>Contact</th>
-                    <th>Address</th>
-                    <th>Actions</th>
+                    <th>ID Mitra</th>
+                    <th>Periode</th>
+                    <th>Total Transaksi</th>
+                    <th>Total Pendapatan</th>
+                    <th>Status Kinerja</th>
+                    <th>Aksi</th>
                 </tr>
             </thead>
             <tbody>
-                @forelse($profiles as $profile)
+                @foreach ($reports as $report)
                     <tr>
-                        <td>{{ $profile->id }}</td>
-                        <td>{{ $profile->name }}</td>
-                        <td>{{ $profile->description }}</td>
-                        <td>{{ $profile->contact }}</td>
-                        <td>{{ $profile->address }}</td>
+                        <td>{{ $report->profile->name }}</td>
+                        <td>{{ $report->periode }}</td>
+                        <td>{{ $report->total_transaksi }}</td>
+                        <td>{{ $report->total_pendapatan }}</td>
+                        <td>{{ $report->status_kinerja }}</td>
                         <td>
-                            <a href="{{ route('profile.show', $profile->id) }}" class="btn btn-info btn-sm">
-                                <i class="fas fa-eye"></i> View
+                        <a href="{{ route('reports.show', $report) }}" class="btn btn-info btn-sm">
+                                <i class="fas fa-eye"></i> Lihat
                             </a>
-                            <a href="{{ route('profile.edit', $profile->id) }}" class="btn btn-warning btn-sm">
+                            <a href="{{ route('reports.edit', $report) }}" class="btn btn-warning btn-sm">
                                 <i class="fas fa-edit"></i> Edit
                             </a>
-                            <form action="{{ route('profile.destroy', $profile->id) }}" method="POST" style="display:inline-block;">
+                            <form action="{{ route('reports.destroy', $report) }}" method="POST" style="display:inline-block;">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure?')">
-                                    <i class="fas fa-trash-alt"></i> Delete
+                                    <i class="fas fa-trash-alt"></i> Hapus
                                 </button>
                             </form>
                         </td>
                     </tr>
-                @empty
-                    <tr>
-                        <td colspan="6" class="text-center">No profiles found.</td>
-                    </tr>
-                @endforelse
+                @endforeach
             </tbody>
         </table>
     </div>
