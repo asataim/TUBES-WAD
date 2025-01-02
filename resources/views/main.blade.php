@@ -33,22 +33,13 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item">
-                            <a class="nav-link active" href="{{ route('homepage') }}">Home</a>
+                            <a class="nav-link active" href="{{ route('main') }}">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('profile.index') }}">Mitra Profiles</a>
+                            <a class="nav-link" href="{{ route('about') }}">Profil</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('admin.index') }}">Accounts</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('produk.index') }}">Produk</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Resto</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('reports.index') }}">Mitra Reports</a>
+                            <a class="nav-link" href="{{ route('partners.index') }}">Kemitraan</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{ url('/') }}">Logout</a>

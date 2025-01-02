@@ -25,13 +25,13 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ url('/') }}">Home</a>
+                            <a class="nav-link" href="{{ route('main') }}">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('profile.index') }}">Mitra Profiles</a>
+                            <a class="nav-link active" href="{{ route('about') }}">Profil</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Kemitraan</a>
+                            <a class="nav-link" href="{{ route('partners.index') }}">Kemitraan</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">Testimoni</a>
@@ -40,10 +40,10 @@
                             <a class="nav-link" href="#">Resto</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('reports.index') }}">Mitra Reports</a>
+                            <a class="nav-link" href="#">Menu</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" href="{{ route('about') }}">About</a>
+                            <a class="nav-link" href="#">Hubungi Kami</a>
                         </li>
                     </ul>
                 </div>
