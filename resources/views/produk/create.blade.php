@@ -48,6 +48,8 @@
 <!-- <div class="container">
         <div class="form-container">
             <h1 class="text-center text-success mb-4">Tambah Produk</h1>
+
+
             <form action="{{ route('produk.store') }}" method="POST">
                 @csrf
                 <div class="mb-3">
@@ -96,7 +98,6 @@
             </form>
         </div>
     </div>
-
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>

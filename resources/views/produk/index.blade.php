@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="{{ asset('css/indexBlade.css') }}" rel="stylesheet">
+    
 </head>
 <body>
     <header>
@@ -95,7 +96,6 @@
         </table>
     </div> -->
 
-    <!-- BAWAH -->
     <div class="container my-5 table-product">
             <h1 class="text-center text-success mb-4">Daftar Produk</h1>
 
@@ -248,9 +248,7 @@
             </section>
         </footer>
     </div>
-    <!-- ATAS -->
 
-    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
