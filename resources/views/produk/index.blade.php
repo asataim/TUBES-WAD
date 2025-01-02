@@ -7,96 +7,47 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="{{ asset('css/indexBlade.css') }}" rel="stylesheet">
-    
+
 </head>
 <body>
-    <header>
-        <nav class="navbar navbar-expand-lg">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="#">
-                    <img src="{{ asset('gambar/thalita_navbar.jpeg') }}" alt="Thalita Logo" style="height: 40px;">
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ms-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('homepage') }}">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('profile.index') }}">Mitra Profiles</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('admin.index') }}">Accounts</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" href="{{ route('produk.index') }}">Produk</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">FITUR</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('reports.index') }}">Mitra Reports</a>
-                        </li>
-                    </ul>
+    <div class="content-edit">
+        <header>
+            <nav class="navbar navbar-expand-lg">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="#">
+                        <img src="{{ asset('gambar/thalita_navbar.jpeg') }}" alt="Thalita Logo" style="height: 40px;">
+                    </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav ms-auto">
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('homepage') }}">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('profile.index') }}">Mitra Profiles</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('admin.index') }}">Accounts</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" href="{{ route('produk.index') }}">Produk</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">FITUR</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('reports.index') }}">Mitra Reports</a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-            </div>
-        </nav>
-    </header>
+            </nav>
+        </header>
 
-<!-- 
-    <div class="container my-5">
-        <h1 class="text-center text-success mb-4">Daftar Produk</h1>
-
-        @if(session('success'))
-            <div class="alert alert-success">
-                {{ session('success') }}
-            </div>
-        @endif
-
-        <div class="d-flex justify-content-between mb-3">
-            <a href="{{ route('produk.create') }}" class="btn btn-green">Tambah Produk</a>
-        </div>
-
-        <table class="table table-bordered table-hover">
-            <thead class="text-center">
-                <tr>
-                    <th>ID</th>
-                    <th>Nama Produk</th>
-                    <th>Harga</th>
-                    <th>Stok</th>
-                    <th>Aksi</th>
-                </tr>
-            </thead>
-            <tbody>
-                @forelse ($produk as $item)
-                    <tr>
-                        <td class="text-center">{{ $item->id }}</td>
-                        <td>{{ $item->nama_produk }}</td>
-                        <td>Rp{{ number_format($item->harga, 2, ',', '.') }}</td>
-                        <td class="text-center">{{ $item->stok }}</td>
-                        <td class="text-center">
-                            <a href="{{ route('produk.show', $item->id) }}" class="btn btn-info btn-sm">Detail</a>
-                            <a href="{{ route('produk.edit', $item->id) }}" class="btn btn-warning btn-sm">Edit</a>
-                            <form action="{{ route('produk.destroy', $item->id) }}" method="POST" style="display:inline-block;">
-                                @csrf
-                                @method('DELETE')
-                                <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Yakin ingin menghapus?')">Hapus</button>
-                            </form>
-                        </td>
-                    </tr>
-                @empty
-                    <tr>
-                        <td colspan="6" class="text-center">Tidak ada data produk.</td>
-                    </tr>
-                @endforelse
-            </tbody>
-        </table>
-    </div> -->
-
-    <div class="container my-5 table-product">
+        <div class="container my-5 table-product">
             <h1 class="text-center text-success mb-4">Daftar Produk</h1>
 
             @if(session('success'))
@@ -145,7 +96,7 @@
                 </table>
             </div>
         </div>
-    
+
         <footer class="text-center text-lg-start bg-body-tertiary text-muted">
             <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
                 <div class="me-5 d-none d-lg-block">

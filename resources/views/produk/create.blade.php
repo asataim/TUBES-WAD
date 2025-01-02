@@ -45,34 +45,6 @@
         </nav>
     </header>
 
-<!-- <div class="container">
-        <div class="form-container">
-            <h1 class="text-center text-success mb-4">Tambah Produk</h1>
-
-
-            <form action="{{ route('produk.store') }}" method="POST">
-                @csrf
-                <div class="mb-3">
-                    <label for="nama_produk" class="form-label">Nama Produk</label>
-                    <input type="text" class="form-control" id="nama_produk" name="nama_produk" required>
-                </div>
-                <div class="mb-3">
-                    <label for="harga" class="form-label">Harga</label>
-                    <input type="number" class="form-control" id="harga" name="harga" step="0.01" required>
-                </div>
-                <div class="mb-3">
-                    <label for="stok" class="form-label">Stok</label>
-                    <input type="number" class="form-control" id="stok" name="stok" required>
-                </div>
-                <div class="d-flex justify-content-between">
-                    <a href="{{ route('produk.index') }}" class="btn btn-secondary">Kembali</a>
-                    <button type="submit" class="btn btn-green">Simpan</button>
-                </div>
-            </form>
-        </div>
-    </div> -->
-
-
     <div class="container">
         <div class="card p-4">
             <h1 class="text-center mb-4">Tambah Produk</h1>

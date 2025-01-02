@@ -7,6 +7,12 @@ body {
     margin-top: 50px;
 }
 
+.content-edit {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
 .navbar {
     padding: 10px;
     background-color:#F5F5F5 ;
@@ -82,6 +88,9 @@ h1 {
     border-radius: 8px;
 }
 
+footer {
+    margin-top: auto;
+}
 /* ... */
 
 
