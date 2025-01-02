@@ -7,7 +7,7 @@
 <body>
 <div class="container mt-5">
     <h1>Edit Transaksi</h1>
-    <form action="{{ route('transaksi.update', $transaksi->id_transaksi) }}" method="POST">
+    <!-- <form action="{{ route('transaksi.update', $transaksi->id_transaksi) }}" method="POST"> -->
         @csrf
         @method('PUT')
         <div class="mb-3">

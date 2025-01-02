@@ -198,6 +198,10 @@
             <i class="fas fa-plus-circle"></i> Tambah Laporan Baru
         </a>
         
+        <a href="{{ route('reports.exportAllPdf') }}" class="btn btn-success mb-3">
+            <i class="fas fa-file-export"></i> Export Semua Laporan ke PDF
+        </a>
+
         <table>
             <thead>
                 <tr>
@@ -237,6 +241,9 @@
             </tbody>
         </table>
 
+        <a href="{{ route('reports.exportPdf', $report) }}" class="btn btn-primary btn-sm">
+            <i class="fas fa-file-pdf"></i> Export PDF
+        </a>
         
     </div>
 
