@@ -1,6 +1,6 @@
 body {
     background-color:#F5F5F5 ;
-    padding-bottom: 1000px;     
+    /* padding-bottom: 1000px;      */
 }
 
 .navbar {
@@ -39,7 +39,7 @@ body {
 
 .profile-section {
     position: relative;
-    background-image: url('gambar/ayam.jpeg'); 
+    background-image: url('/public/gambar/ayam.jpeg'); 
     background-size: cover;
     background-position: center;
     height: 100vh; 

@@ -236,6 +236,9 @@
                 @endforeach
             </tbody>
         </table>
+
+        <a href="{{ route('reports.exportPdf', ['report' => $report->id]) }}" class="btn btn-primary">Export PDF</a>
+        
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>

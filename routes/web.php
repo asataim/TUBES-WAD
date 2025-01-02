@@ -37,3 +37,10 @@ Route::middleware('auth')->resource('admin', AdminController::class);
 Route::middleware('auth')->get('/admin', [AdminController::class, 'index'])->name('admin.index');
 
 Route::middleware('auth')->resource('produk', ProdukController::class);
+
+#Route::middleware('auth')->get('/reports/pdf', [ReportController::class, 'exportPdf']);
+#Route::get('/reports/pdf', [ReportController::class, 'exportPdf'])->name('reports.pdf');
+
+#Route::get('reports/view/pdf', ReportController::class, 'exportPdf');
+
+Route::get('reports/{report}/export-pdf', [ReportController::class, 'exportPdf'])->name('reports.exportPdf');

@@ -23,10 +23,10 @@ body {
     margin-right: 50px;
 }
 
-.navbar-collapse {
+/* .navbar-collapse {
     /* height: 15px; */
     /* background-color: antiquewhite; */
-}
+/* } */ */
 
 .nav-link:hover {
     /* font-weight: bolder; */
@@ -44,4 +44,3 @@ body {
 }
 
 /* ... */
-
