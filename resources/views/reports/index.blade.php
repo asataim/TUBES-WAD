@@ -237,7 +237,6 @@
             </tbody>
         </table>
 
-        <a href="{{ route('reports.exportPdf', ['report' => $report->id]) }}" class="btn btn-primary">Export PDF</a>
         
     </div>
 

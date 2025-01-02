@@ -114,7 +114,7 @@
                             @foreach($transaksi as $t)
                             <tr>
                                 <td>{{ $t->id }}</td>
-                                <td>{{ $t->profile->nama ?? 'N/A' }}</td>
+                                <td>{{ $t->profile->name ?? 'N/A' }}</td>
                                 <td>Rp {{ number_format($t->jumlah, 2, ',', '.') }}</td>
                                 <td>{{ \Carbon\Carbon::parse($t->tanggal)->format('d-m-Y') }}</td>
                                 <td>
@@ -158,6 +158,7 @@
                     <div class="modal-body">
                         <form id="transaksiForm" method="POST" action="{{ route('transaksi.store') }}">
                             @csrf
+                            @method('PUT')
                             <div class="mb-3">
                                 <label class="form-label">Mitra</label>
                                 <select name="id_mitra" class="form-select">
@@ -195,8 +196,9 @@
                 </div>
             </div>
         </div>
-    </div>
 
+    </div>
+    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
     <script>
         function openModal() {
@@ -205,7 +207,26 @@
         }
 
         function editTransaksi(id) {
-            // Implementasi edit transaksi
+            fetch(`/transaksi/${id}/edit`)
+                .then(response => response.json())
+                .then(data => {
+
+                    document.querySelector('select[name="id_mitra"]').value = data.id_mitra;
+                    document.querySelector('input[name="jumlah"]').value = data.jumlah;
+                    document.querySelector('input[name="tanggal"]').value = data.tanggal;
+                    document.querySelector('select[name="status"]').value = data.status;
+                    document.querySelector('textarea[name="keterangan"]').value = data.keterangan;
+
+
+                    const form = document.getElementById('transaksiForm');
+                    form.action = `/transaksi/${data.id}`;
+
+                    var modal = new bootstrap.Modal(document.getElementById('formModal'));
+                    modal.show();
+                })
+                .catch(error => {
+                    console.error('Terjadi kesalahan:', error);
+                });
         }
     </script>
 </body>

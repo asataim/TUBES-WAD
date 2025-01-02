@@ -21,4 +21,9 @@ public function reports()
     {
         return $this->hasMany(Report::class, 'id_mitra');
     }
+
+public function transaksi()
+    {
+        return $this->hasMany(Transaksi::class, 'id_mitra');
+    }
 }

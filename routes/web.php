@@ -32,6 +32,9 @@ Route::post('/register', [RegisterController::class, 'register']);
 Route::middleware('auth')->resource('transaksi', TransaksiController::class);
 Route::middleware('auth')->get('/transaksi', [TransaksiController::class, 'index']);
 Route::middleware('auth')->get('/transaksi', [TransaksiController::class, 'index'])->name('transaksi.index');
+Route::middleware('auth')->get('/transaksi/{transaksi}/edit', [TransaksiController::class, 'edit'])->name('transaksi.edit');
+Route::middleware('auth')->put('/transaksi/{transaksi}', [TransaksiController::class, 'update'])->name('transaksi.update');
+
 
 Route::middleware('auth')->resource('admin', AdminController::class);
 Route::middleware('auth')->get('/admin', [AdminController::class, 'index'])->name('admin.index');

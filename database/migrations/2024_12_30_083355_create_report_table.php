@@ -17,7 +17,7 @@ return new class extends Migration
             $table->foreign('id_mitra')->references('id')->on('profiles')->onDelete('cascade');
             $table->string('periode');
             $table->integer('total_transaksi');
-            $table->decimal('total_pendapatan', 15, 2); // Menyimpan angka desimal
+            $table->decimal('total_pendapatan', 15, 2); 
             $table->string('status_kinerja');
             $table->timestamps();
         });

@@ -10,7 +10,7 @@ class TransaksiController extends Controller
 {
     public function index()
     {
-        $transaksi = Transaksi::with('profiles')->latest()->get();
+        $transaksi = Transaksi::with('profile')->latest()->get();
         $profiles = Profile::all();
         return view('transaksi.index', compact('transaksi', 'profiles'));
     }
@@ -35,6 +35,11 @@ class TransaksiController extends Controller
         return redirect()->route('transaksi.index')->with('success', 'Transaksi berhasil ditambahkan');
     }
 
+    public function edit(Transaksi $transaksi)
+    {
+        return response()->json($transaksi);
+    }
+
     public function update(Request $request, Transaksi $transaksi)
     {
         $request->validate([
@@ -45,7 +50,14 @@ class TransaksiController extends Controller
             'keterangan' => 'required'
         ]);
 
-        $transaksi->update($request->all());
+        $transaksi->update([
+            'id_mitra' => $request->id_mitra,
+            'jumlah' => $request->jumlah,
+            'tanggal' => $request->tanggal,
+            'status' => $request->status,
+            'keterangan' => $request->keterangan,
+        ]);
+
         return redirect()->route('transaksi.index')->with('success', 'Transaksi berhasil diperbarui');
     }
 
