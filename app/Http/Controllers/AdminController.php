@@ -29,7 +29,7 @@ class AdminController extends Controller
         $validated = $request->validate([
             'nama' => 'required|string|max:255',
             'role' => 'required|in:admin,user',
-            'username' => 'required|string|unique:admins,username',
+            'username' => 'required|string|unique:users,username',
             'password' => 'required|string|min:8',
         ]);
 
@@ -51,7 +51,7 @@ class AdminController extends Controller
         $validated = $request->validate([
             'nama' => 'required|string|max:255',
             'admin/user' => 'required|in:admin,user',
-            'username' => 'required|string|unique:admins,username,' . $admin->id,
+            'username' => 'required|string|unique:users,username,' . $admin->id,
             'password' => [
                 'nullable',
                 'string',
