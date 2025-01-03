@@ -240,10 +240,6 @@
                 @endforeach
             </tbody>
         </table>
-
-        <a href="{{ route('reports.exportPdf', $report) }}" class="btn btn-primary btn-sm">
-            <i class="fas fa-file-pdf"></i> Export PDF
-        </a>
         
     </div>
 
