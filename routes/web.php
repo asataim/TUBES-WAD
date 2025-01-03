@@ -34,6 +34,7 @@ Route::middleware('auth')->group(function() {
     Route::get('/transaksi', [TransaksiController::class, 'index']);
     Route::get('/transaksi', [TransaksiController::class, 'index'])->name('transaksi.index');
     Route::get('/transaksi/{transaksi}/edit', [TransaksiController::class, 'edit'])->name('transaksi.edit');
+    Route::get('/transaksi/create', [TransaksiController::class, 'create'])->name('transaksi.create');
     Route::put('/transaksi/{transaksi}', [TransaksiController::class, 'update'])->name('transaksi.update');
 });
 

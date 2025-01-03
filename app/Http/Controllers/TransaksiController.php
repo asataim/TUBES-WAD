@@ -24,6 +24,14 @@ class TransaksiController extends Controller
     public function store(Request $request)
     {
         $request->validate([
+            'id_mitra' => 'required|exists:profiles,id', 
+            'jumlah' => 'required|numeric',
+            'tanggal' => 'required|date',
+            'status' => 'required|in:pending,completed,failed',
+            'keterangan' => 'required',
+        ]);
+
+        $request->validate([
             'id_mitra' => 'required|exists:profiles,id',
             'jumlah' => 'required|numeric',
             'tanggal' => 'required|date',
@@ -37,7 +45,8 @@ class TransaksiController extends Controller
 
     public function edit(Transaksi $transaksi)
     {
-        return response()->json($transaksi);
+        $profiles = Profile::all();
+        return view('transaksi.edit', compact('transaksi', 'profiles'));
     }
 
     public function update(Request $request, Transaksi $transaksi)
@@ -50,14 +59,8 @@ class TransaksiController extends Controller
             'keterangan' => 'required'
         ]);
 
-        $transaksi->update([
-            'id_mitra' => $request->id_mitra,
-            'jumlah' => $request->jumlah,
-            'tanggal' => $request->tanggal,
-            'status' => $request->status,
-            'keterangan' => $request->keterangan,
-        ]);
-
+        $transaksi->update($request->all());
+        
         return redirect()->route('transaksi.index')->with('success', 'Transaksi berhasil diperbarui');
     }
 

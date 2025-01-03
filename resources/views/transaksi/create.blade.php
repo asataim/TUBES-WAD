@@ -10,8 +10,12 @@
     <form action="{{ route('transaksi.store') }}" method="POST">
         @csrf
         <div class="mb-3">
-            <label for="id_mitra" class="form-label">ID Mitra:</label>
-            <input type="number" name="id_mitra" class="form-control" required>
+        <label for="id_mitra">ID Mitra:</label>
+            <select name="id_mitra" id="id_mitra" required>
+                @foreach ($profiles as $profile)
+                    <option value="{{ $profile->id }}">{{ $profile->name }}</option>
+                @endforeach
+            </select>
         </div>
         <div class="mb-3">
             <label for="jumlah" class="form-label">Jumlah:</label>

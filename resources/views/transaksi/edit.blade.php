@@ -7,17 +7,26 @@
 <body>
 <div class="container mt-5">
     <h1>Edit Transaksi</h1>
-    <!-- <form action="{{ route('transaksi.update', $transaksi->id_transaksi) }}" method="POST"> -->
+    <form action="{{ route('transaksi.update', $transaksi) }}" method="POST">
         @csrf
         @method('PUT')
+
         <div class="mb-3">
-            <label for="id_mitra" class="form-label">ID Mitra:</label>
-            <input type="number" name="id_mitra" class="form-control" value="{{ $transaksi->id_mitra }}" required>
+            <label for="id_mitra" class="form-label">Pilih Mitra</label>
+            <select name="id_mitra" id="id_mitra" class="form-select" required>
+                @foreach($profiles as $profile)
+                <option value="{{ $profile->id }}" {{ $transaksi->id_mitra == $profile->id ? 'selected' : '' }}>
+                    {{ $profile->name }}
+                </option>
+                @endforeach
+            </select>
         </div>
+
         <div class="mb-3">
             <label for="jumlah" class="form-label">Jumlah:</label>
             <input type="number" name="jumlah" step="0.01" class="form-control" value="{{ $transaksi->jumlah }}" required>
         </div>
+
         <div class="mb-3">
             <label for="tanggal" class="form-label">Tanggal:</label>
             <input type="date" name="tanggal" class="form-control" value="{{ $transaksi->tanggal }}" required>

@@ -86,9 +86,9 @@
             <div class="card-body">
                 <div class="d-flex justify-content-between align-items-center mb-3">
                     <h2 class="h4">Manajemen Transaksi</h2>
-                    <button onclick="openModal()" class="btn btn-primary">
+                    <a href="{{ route('transaksi.create') }}" class="btn btn-primary">
                         Tambah Transaksi
-                    </button>
+                    </a>
                 </div>
 
                 @if(session('success'))
@@ -128,9 +128,9 @@
                                 </td>
                                 <td>{{ $t->keterangan }}</td>
                                 <td>
-                                    <button onclick="editTransaksi({{ $t->id }})" class="btn btn-sm btn-link text-primary">
-                                        Edit
-                                    </button>
+                                <a href="{{ route('transaksi.edit', $t) }}" class="btn btn-warning btn-sm">
+                                    <i class="fas fa-edit"></i> Edit
+                                </a>
                                     <form action="{{ route('transaksi.destroy', $t) }}" method="POST" class="d-inline">
                                         @csrf
                                         @method('DELETE')
@@ -147,88 +147,9 @@
             </div>
         </div>
 
-        <!-- Modal Form -->
-        <div id="formModal" class="modal fade" tabindex="-1" aria-labelledby="formModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="formModalLabel">Tambah Transaksi</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <form id="transaksiForm" method="POST" action="{{ route('transaksi.store') }}">
-                            @csrf
-                            @method('PUT')
-                            <div class="mb-3">
-                                <label class="form-label">Mitra</label>
-                                <select name="id_mitra" class="form-select">
-                                    @foreach($profiles as $profile)
-                                    <option value="{{ $profile->id }}">{{ $profile->name }}</option>
-                                    @endforeach
-                                </select>
-                            </div>
-                            <div class="mb-3">
-                                <label class="form-label">Jumlah</label>
-                                <input type="number" name="jumlah" step="0.01" class="form-control" required>
-                            </div>
-                            <div class="mb-3">
-                                <label class="form-label">Tanggal</label>
-                                <input type="date" name="tanggal" class="form-control" required>
-                            </div>
-                            <div class="mb-3">
-                                <label class="form-label">Status</label>
-                                <select name="status" class="form-select">
-                                    <option value="pending">Pending</option>
-                                    <option value="completed">Completed</option>
-                                    <option value="failed">Failed</option>
-                                </select>
-                            </div>
-                            <div class="mb-3">
-                                <label class="form-label">Keterangan</label>
-                                <textarea name="keterangan" class="form-control" required></textarea>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
-                                <button type="submit" class="btn btn-primary">Simpan</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-
     </div>
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
-    <script>
-        function openModal() {
-            var modal = new bootstrap.Modal(document.getElementById('formModal'));
-            modal.show();
-        }
-
-        function editTransaksi(id) {
-            fetch(`/transaksi/${id}/edit`)
-                .then(response => response.json())
-                .then(data => {
-
-                    document.querySelector('select[name="id_mitra"]').value = data.id_mitra;
-                    document.querySelector('input[name="jumlah"]').value = data.jumlah;
-                    document.querySelector('input[name="tanggal"]').value = data.tanggal;
-                    document.querySelector('select[name="status"]').value = data.status;
-                    document.querySelector('textarea[name="keterangan"]').value = data.keterangan;
-
-
-                    const form = document.getElementById('transaksiForm');
-                    form.action = `/transaksi/${data.id}`;
-
-                    var modal = new bootstrap.Modal(document.getElementById('formModal'));
-                    modal.show();
-                })
-                .catch(error => {
-                    console.error('Terjadi kesalahan:', error);
-                });
-        }
-    </script>
 </body>
 
 </html>
